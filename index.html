@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- SITE TITLE -->
+	<title>GoAds</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<!-- STYLESHEET CSS FILES -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/nivo-lightbox.css">
+	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
+	<link rel="stylesheet" href="css/style.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("form").submit(function(e) {
+		e.preventDefault(); // prevent the form from submitting normally
+		var name = $("#name").val();
+		var email = $("#email").val();
+		var message = $("#subject").val();
+		var message = $("#message").val();
+		$.ajax({
+			type: "POST",
+			url: "contact.php",
+			data: {
+				name: name,
+				email: email,
+				subject: subject,
+				message: message
+			},
+			success: function(response) {
+				$("#result").html(response); // display the response in a div
+				$("#name").val("");
+				$("#email").val("");
+				$("#subject").val("");
+				$("#message").val("");
+			}
+		});
+	});
+});
+ </script>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+<!-- navigation section -->
+<section class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="/index.html"><img src="/images/GoAds-temp.png" class="navbar-brand"></a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="ourworks.html" class="smoothScroll">Our Works</a></li>
+				<li><a href="aboutus.html" class="smoothScroll">About Us</a></li>
+				<li><a href="#contact" class="smoothScroll contact-cta">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- home section -->
+<section id="home">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h1 class="heading">We’re an advertising agency that makes your products <br><span class="magic-text">stand out.</span></h1>
+				<h4 style="margin-top: 24px;">We create memorable campaigns that connect with your audience.</h4>
+				<a href="/aboutus.html" class="btn white-btn btn-default">Learn more</a>
+				<a href="#contact" class="btn black-btn btn-default">Get in touch</a>
+				<div class="success-stats">
+					<div>
+						<p class="stat-no">23</p>
+						<p class="stat-text">campaigns</p>
+					</div>
+					<div>
+						<p class="stat-no">10</p>
+						<p class="stat-text">billboards</p>
+					</div>
+					<div>
+						<p class="stat-no">100</p>
+						<p class="stat-text">pole kiosks</p>
+					</div>
+					<div>
+						<p class="stat-no">48</p>
+						<p class="stat-text">bus shelters</p>
+					</div>
+				</div>
+				<h4 style="margin-top: 46px;">Our valued clients</h4>
+				<img src="/images/left-ads.svg" class="left-ad wow bounceInUp animated" data-wow-delay="1s">
+				<img src="/images/right-ads.svg" class="right-ad wow bounceInUp animated" data-wow-delay="1.2s">
+				<div class="client-showcase">
+					<div class="client">
+						<img src="/images/client.png" alt="client">
+					</div>
+					<div class="client">
+						<img src="/images/client.png" alt="client">
+					</div>
+					<div class="client">
+						<img src="/images/client.png" alt="client">
+					</div>
+					<div class="client">
+						<img src="/images/client.png" alt="client">
+					</div>
+					<div class="client">
+						<img src="/images/client.png" alt="client">
+					</div>
+				</div>
+
+					<div class="text-left" style="margin-top: 40px;">
+						<h2>Here’s what we <span class="magic-text">offer.</span></h2>
+					</div>
+					<div class="offer-grid">
+
+							<div class="offer-card wow fadeInUp" style="margin-top: 20px" data-wow-delay="0.5s">
+								<img src="/images/360.svg" class="offer-icon">
+								<div class="text-left">
+									<h2 style="font-size: 24px;">360 execution</h2>
+									Select the optimal package for your brand's success from our diverse array of services.
+								</div>
+							</div>
+
+
+							<div class="offer-card wow fadeInUp" style="margin-top: 20px" data-wow-delay="0.5s">
+								<img src="/images/mode_of_travel.svg" class="offer-icon">
+								<div class="text-left">
+									<h2 style="font-size: 24px;">Spot-on location</h2>
+									Prime centers and avenues to exhibit your brand identities and advertisements.
+								</div>
+							</div>
+
+
+							<div class="offer-card wow fadeInUp" style="margin-top: 20px" data-wow-delay="0.5s">
+								<img src="/images/acute.svg" class="offer-icon">
+								<div class="text-left">
+									<h2 style="font-size: 24px;">Timeliness</h2>
+									Gets your requirement and acts timely, with excellent quality of service.
+								</div>
+							</div>
+
+					</div>
+				<div>
+					<div class="ad-spaces">
+						<h2>Choose from our <span class="magic-text">ad spaces.</span></h2>
+						<a href="/ourworks.html" ><h3 class="subheading" style="display: flex;">See our works <img src="/images/red-arrow.svg" style="margin-left: 10px;"></h3></a>
+					</div>
+					<div class="gallery" style="margin-top: 20px;">
+						<div class="gallery__column">
+							<a href="/ourworks.html" target="_blank" class="gallery__link">
+								<figure class="gallery__thumb">
+									<img src="https://source.unsplash.com/_cvwXhGqG-o/300x300" alt="Portrait by Jessica Felicio" class="gallery__image">
+									<h3 class="gallery__title">Gantries</h3>
+									<figcaption class="gallery__caption">A gantry is the overhead structure that spans across a road. By using this platform, we help to have a direct communication with the potential customers and awareness about the brand to both sides of the traffic.</figcaption>
+								</figure>
+							</a>
+						</div>
+						
+						<div class="gallery__column">
+							<a href="/ourworks.html" target="_blank" class="gallery__link">
+								<figure class="gallery__thumb">
+									<img src="https://source.unsplash.com/AR7aumwKr2s/300x300" alt="Portrait by Noah Buscher" class="gallery__image">
+									<h3 class="gallery__title">Billboards</h3>
+									<figcaption class="gallery__caption">Billboards are a great way to reach masses especially to reach where they live, work and socialize. Its huge size is the biggest advantage which can leave people with a lasting impression in their mind.</figcaption>
+								</figure>
+							</a>
+						</div>
+						
+						<div class="gallery__column">
+							<a href="/ourworks.html" target="_blank" class="gallery__link">
+								<figure class="gallery__thumb">
+									<img src="/images/billobard.jpeg" alt="Portrait by Mari Lezhava" class="gallery__image">
+									<h3 class="gallery__title">Kiosks</h3>
+									<figcaption class="gallery__caption">A kiosk is a small stand alone booth placed for business purpose which provides information and applications. Placing kiosks in strategic places with catchy messages and offers can attract more customers.
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						
+						<div class="gallery__column">
+							<a href="/ourworks.html" target="_blank" class="gallery__link">
+								<figure class="gallery__thumb">
+									<img src="https://source.unsplash.com/FQhLLehm4dk/300x300" alt="Portrait by Guilian Fremaux" class="gallery__image">
+									<h3 class="gallery__title">Unipoles</h3>
+									<figcaption class="gallery__caption">Unipole billboards are large format billboards that are placed on top of very high poles. Their effectiveness is proven to show significant results because of their long distance visibility</figcaption>
+								</figure>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+</section>
+
+<!-- contact section -->
+<section id="contact">
+	<div class="container" style="position: relative;">
+		<img src="/images/contact-rectangle.svg" class="contact-rectangle">
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<h1 class="bold" style="display: flex;">Talk to us. <img src="/images/white-arrow.svg" style="margin-left: 100px;" ></h1>
+				<h2 class="subheading">Tell us what you’re thinking.</h2>
+			</div>
+
+			<div class="col-md-6 col-sm-6">
+				<form action="contact.php" method="post" >
+						<p>Name</p>
+						<input name="name" type="text" class="form-control line" id="name" required>
+						<p>Email</p>
+				  	  	<input name="email" type="email" class="form-control line" id="email" required>
+						<p>Subject</p>
+						<input name="subject" type="text" class="form-control line" id="subject">
+						<p>Message</p>
+						<textarea name="message" rows="7" class="form-control" id="message"></textarea>
+						<input name="submit" type="submit" class="btn black-btn" id="submit" value="Send">
+				</form>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<!-- footer section -->
+<footer>
+	<div class="container">
+	  <div class="row text-left">
+		<div class="col-lg-6 col-md-6">
+		  <div style="margin-bottom: 20px;">
+			<a href="/index.html" ><img src="/images/GoAds-temp.png" alt="Company Logo"></a>
+		  </div>
+		  <address>
+			F1, 5th floor, South Square Building,<br>
+			Panampilly Nagar, Ernakulam,<br>
+			Kerala - 682036
+		  </address>
+		  <p>©  2023 GoAds </p>
+		</div>
+		<div class="col-lg-6 col-md-6">
+		  <nav style=>
+			<ul style="list-style: none; line-height: 3rem;">
+			  <li><a href="/aboutus.html">About Us</a></li>
+			  <li><a href="/ourworks.html">Our Works</a></li>
+			  <li><a href="/index.html#contact">Contact Us</a></li>
+			</ul>
+		  </nav>
+		</div>
+	  </div>
+	</div>
+  </footer>
+  
+
+
+<!-- JAVASCRIPT JS FILES -->	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/imagesloaded.min.js"></script>
+<script src="js/nivo-lightbox.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
